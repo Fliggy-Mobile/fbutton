@@ -41,6 +41,7 @@ enum FButtonCornerStyle {
 /// Support for configuring rounded corners, various special effects, corners, borders, and loading.
 /// FButton allows developers to familiarize themselves with just one button component and implement common buttons.
 /// No need to master many different types of button components.
+// ignore: must_be_immutable
 class FButton extends StatefulWidget {
   /// 当按下按钮时，会触发该函数。如果未设置该函数，按钮将进入不可用状态。
   ///

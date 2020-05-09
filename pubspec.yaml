@@ -2,7 +2,7 @@ name: fbutton
 description: Let developers just need to grasp only one button component.
 version: 1.0.4
 author: CoorChice<coorchice.cb@alibaba-inc.com>
-homepage: https://github.com/Fliggy-Android-Team/fbutton
+homepage: https://github.com/Fliggy-Mobile/fbutton
 
 environment:
   sdk: ">=2.2.0 <3.0.0"

@@ -132,12 +132,14 @@ class _FButtonPageState extends State<FButtonPage> {
         ));
   }
 
-  StatefulBuilder buildShadowButton() {
+  Widget buildShadowButton() {
     return StatefulBuilder(builder: (context, setState) {
       return Column(
         children: <Widget>[
           FButton(
             width: 200,
+            height: 50,
+            alignment: Alignment.center,
             effect: true,
             text: "Shadow FButton",
             textColor: Colors.white,
@@ -175,6 +177,8 @@ class _FButtonPageState extends State<FButtonPage> {
   FButton buildEffectButton() {
     return FButton(
       width: 200,
+      height: 50,
+      alignment: Alignment.center,
       effect: true,
       text: "Try Me!",
       textColor: Colors.white,
@@ -188,7 +192,7 @@ class _FButtonPageState extends State<FButtonPage> {
     );
   }
 
-  StatefulBuilder buildLoadingButton2() {
+  Widget buildLoadingButton2() {
     return StatefulBuilder(builder: (context, setState) {
       return Column(
         children: <Widget>[
@@ -196,6 +200,7 @@ class _FButtonPageState extends State<FButtonPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               FButton(
+                padding: EdgeInsets.all(12.0),
                 effect: true,
                 text: "Click left loading",
                 textColor: Colors.white,
@@ -216,6 +221,7 @@ class _FButtonPageState extends State<FButtonPage> {
                 width: 10,
               ),
               FButton(
+                padding: EdgeInsets.all(12.0),
                 effect: true,
                 text: "Click top loading",
                 textColor: Colors.white,
@@ -241,6 +247,7 @@ class _FButtonPageState extends State<FButtonPage> {
             width: 170,
             height: 70,
             effect: true,
+            alignment: Alignment.center,
             text: "Click to loading",
             textColor: Colors.white,
             color: Color(0xffffc900),
@@ -266,6 +273,8 @@ class _FButtonPageState extends State<FButtonPage> {
               '那么其文本将会被隐藏起来'),
           FButton(
             width: 100,
+            height: 30,
+            alignment: Alignment.center,
             text: "Reset",
             textColor: Colors.white,
             corner: FButtonCorner.all(25),
@@ -281,11 +290,12 @@ class _FButtonPageState extends State<FButtonPage> {
     });
   }
 
-  FButton buildLoadingButton1() {
+  Widget buildLoadingButton1() {
     return FButton(
       width: 200,
+      height: 50,
       effect: true,
-      text: "Click left loading",
+      text: "loading",
       textColor: Colors.white,
       color: Color(0xffffc900),
       onPressed: () {
@@ -424,7 +434,9 @@ class _FButtonPageState extends State<FButtonPage> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
       child: FButton(
-        width: 300,
+        width: 200,
+        height: 50,
+        alignment: Alignment.center,
         text: "RadialGradient FButton",
         textColor: Colors.white,
         color: Color(0xffffc900),
@@ -450,6 +462,7 @@ class _FButtonPageState extends State<FButtonPage> {
       child: FButton(
         width: 200,
         height: 90,
+        alignment: Alignment.center,
         text: "SweepGradient FButton",
         textColor: Colors.white,
         color: Color(0xffffc900),
@@ -477,6 +490,8 @@ class _FButtonPageState extends State<FButtonPage> {
       padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
       child: FButton(
         width: 200,
+        height: 50,
+        alignment: Alignment.center,
         text: "LinearGradient FButton",
         textColor: Colors.white,
         color: Color(0xffFFc900),
@@ -491,7 +506,7 @@ class _FButtonPageState extends State<FButtonPage> {
     );
   }
 
-  Container buildCornerButton2() {
+  Widget buildCornerButton2() {
     return Container(
       width: 360,
       padding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
@@ -501,6 +516,9 @@ class _FButtonPageState extends State<FButtonPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               FButton(
+                width: 150,
+                height: 50,
+                alignment: Alignment.center,
                 effect: true,
                 text: "Corner FButton",
                 textColor: Colors.white,
@@ -513,6 +531,9 @@ class _FButtonPageState extends State<FButtonPage> {
                 strokeColor: Color(0xffD84315),
               ),
               FButton(
+                width: 150,
+                height: 50,
+                alignment: Alignment.center,
                 effect: true,
                 text: "Corner FButton",
                 textColor: Colors.white,
@@ -537,7 +558,9 @@ class _FButtonPageState extends State<FButtonPage> {
             children: <Widget>[
               FButton(
                 effect: true,
-                padding: EdgeInsets.fromLTRB(6, 16, 30, 16),
+                width: 150,
+                height: 50,
+                alignment: Alignment.center,
                 text: "Corner FButton",
                 textColor: Colors.white,
                 color: Color(0xffFFc900),
@@ -550,6 +573,9 @@ class _FButtonPageState extends State<FButtonPage> {
                 strokeColor: Color(0xffF9A825),
               ),
               FButton(
+                width: 150,
+                height: 50,
+                alignment: Alignment.center,
                 effect: true,
                 text: "Corner FButton",
                 textColor: Colors.white,
@@ -568,7 +594,7 @@ class _FButtonPageState extends State<FButtonPage> {
     );
   }
 
-  Container buildCornerButton1() {
+  Widget buildCornerButton1() {
     return Container(
       width: 360,
       padding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
@@ -578,6 +604,9 @@ class _FButtonPageState extends State<FButtonPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               FButton(
+                width: 150,
+                height: 50,
+                alignment: Alignment.center,
                 effect: true,
                 text: "Corner FButton",
                 textColor: Colors.white,
@@ -587,6 +616,9 @@ class _FButtonPageState extends State<FButtonPage> {
                 corner: FButtonCorner(leftTopCorner: 18),
               ),
               FButton(
+                width: 150,
+                height: 50,
+                alignment: Alignment.center,
                 effect: true,
                 text: "Corner FButton",
                 textColor: Colors.white,
@@ -607,6 +639,9 @@ class _FButtonPageState extends State<FButtonPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               FButton(
+                width: 150,
+                height: 50,
+                alignment: Alignment.center,
                 effect: true,
                 text: "Corner FButton",
                 textColor: Colors.white,
@@ -616,6 +651,9 @@ class _FButtonPageState extends State<FButtonPage> {
                 corner: FButtonCorner(leftTopCorner: 25, leftBottomCorner: 25),
               ),
               FButton(
+                width: 150,
+                height: 50,
+                alignment: Alignment.center,
                 effect: true,
                 text: "Corner FButton",
                 textColor: Colors.white,
@@ -635,6 +673,7 @@ class _FButtonPageState extends State<FButtonPage> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
       child: FButton(
+        padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
         text: "Normal FButton",
         textColor: Colors.white,
         disabledTextColor: Colors.black38,
@@ -648,6 +687,7 @@ class _FButtonPageState extends State<FButtonPage> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
       child: FButton(
+        padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
         text: "Normal FButton",
         textColor: Colors.white,
         color: Color(0xffFFc900),
@@ -655,10 +695,13 @@ class _FButtonPageState extends State<FButtonPage> {
     );
   }
 
-  Padding buildNormalButton1() {
+  Widget buildNormalButton1() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
       child: FButton(
+        height: 40,
+        alignment: Alignment.center,
+        padding: EdgeInsets.zero,
         text: "Normal FButton",
         textColor: Colors.white,
         color: Color(0xffFFc900),

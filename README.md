@@ -82,22 +82,24 @@
 |onPressed|VoidCallback|true|null|Click callback. If null, FButton will enter an unavailable state|
 |height|double|false|null|height|
 |width|double|false|null|width|
+|style|TextStyle|false|null|text style|
+|alignment|Alignment|false|null|alignment|
 |text|String|false|null|button text|
-|textColor|Color|false|Colors.black12|Button text color|
-|fontSize|double|false|12|Button text size|
-|fontStyle|FontStyle|false|null|Button text font|
+|~~textColor~~|Color|false|Colors.black12|Button text color|
+|~~fontSize~~|double|false|12|Button text size|
+|~~fontStyle~~|FontStyle|false|null|Button text font|
 |color|Color|false|null|Button color|
 |disabledColor|Color|false|null|Color when FButton is unavailable|
 |focusNode|FocusNode|false|null|focus|
 |autofocus|bool|false|false|Whether it can automatically obtain focus|
-|padding|EdgeInsetsGeometry|false|EdgeInsets.symmetric(horizontal: 16.0, vertical: 16)|FButton internal spacing|
+|padding|EdgeInsetsGeometry|false|null|FButton internal spacing|
 |corner|Corner|false|null|Configure corners of FButton|
 |cornerStyle|CornerStyle|false|CornerStyle.round|Configure the corner style of FButton. round-rounded corners, bevel-beveled|
 |strokeColor|Color|false|Colors.black|Border color|
 |strokeWidth|double|false|0|Border width. The border will appear when `strokeWidth > 0`|
 |gradient|Gradient|false|null|Configure gradient colors. Will override the `color`|
-|fontHeight|double|false|null|height of one line of text = textSize * fontHeight|
-|textWeight|double|false|FontWeight.normal|Text weight|
+|~~fontHeight~~|double|false|null|height of one line of text = textSize * fontHeight|
+|~~textWeight~~|double|false|FontWeight.normal|Text weight|
 
 ### 💫 Effect parameters
 |Param|Type|Necessary|Default|desc|

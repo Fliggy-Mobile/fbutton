@@ -83,22 +83,24 @@
 |onPressed|VoidCallback|是|null|点击回调。如果为 null，FButton 会进入不可用状态|
 |height|double|否|null|高度|
 |width|double|否|null|宽度|
+|style|TextStyle|false｜null｜文本样式｜
+|alignment|Alignment|false｜null｜对齐方式｜
 |text|String|否|null|按钮文本|
-|textColor|Color|否|Colors.black12|按钮文本颜色|
-|fontSize|double|否|12|按钮文本字号|
-|fontStyle|FontStyle|否|null|按钮文本字体|
+|~~textColor~~|Color|否|Colors.black12|按钮文本颜色|
+|~~fontSize~~|double|否|12|按钮文本字号|
+|~~fontStyle~~|FontStyle|否|null|按钮文本字体|
 |color|Color|否|null|按钮颜色|
 |disabledColor|Color|否|null|FButton 不可用状态时的颜色|
 |focusNode|FocusNode|否|null|焦点|
 |autofocus|bool|否|false|是否能够自动获取焦点|
-|padding|EdgeInsetsGeometry|否|EdgeInsets.symmetric(horizontal: 16.0, vertical: 16)|FButton 内间距|
+|padding|EdgeInsetsGeometry|否|null|FButton 内间距|
 |corner|Corner|否|null|配置 FButton 的边角|
 |cornerStyle|CornerStyle|否|CornerStyle.round|配置 FButton 的边角样式。round-圆角，bevel-斜切|
 |strokeColor|Color|否|Colors.black|边框颜色|
 |strokeWidth|double|否|0|边框宽度。当 strokeWidth>0 时边框就会出现|
 |gradient|Gradient|否|null|配置渐变色。会覆盖 color 属性|
-|fontHeight|double|否|null|一行文字高度 = textSize * fontHeight|
-|textWeight|double|否|FontWeight.normal|文字粗细|
+|~~fontHeight~~|double|否|null|一行文字高度 = textSize * fontHeight|
+|~~textWeight~~|double|否|FontWeight.normal|文字粗细|
 
 ### 💫 Effect 参数
 |参数|类型|必要|默认值|说明|

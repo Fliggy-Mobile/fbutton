@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fcontrol/fcontrol.dart';
 
 /// [FButton] 图片相对与文字的位置
 ///

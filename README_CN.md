@@ -18,7 +18,7 @@
 <p>
 
 <a href="https://pub.dev/packages/fbutton#-readme-tab-">
-    <img height="20" src="https://img.shields.io/badge/Version-1.0.4-important.svg">
+    <img height="20" src="https://img.shields.io/badge/Version-1.1.0-important.svg">
 </a>
 
 

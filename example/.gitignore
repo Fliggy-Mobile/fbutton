@@ -76,4 +76,5 @@ web/
 .flutter-plugins-dependencies
 README.md
 test/
+macos/
 

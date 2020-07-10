@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/Fliggy-Android-Team">
+  <a href="https://github.com/Fliggy-Mobile">
     <img width="200" src="https://gw.alicdn.com/tfs/TB1a288sxD1gK0jSZFKXXcJrVXa-360-360.png">
   </a>
 </p>
@@ -11,23 +11,23 @@
 
 <p>From then on, developers only need to master one <strong>Button</strong> component, which is enough.</p>
 
-<p>Support rounded corners, borders, image, special effects, loading mode.</p>
+<p>Support corners, borders, icons, special effects, loading mode, high-quality Neumorphism style.</p>
 
 <p><strong>Author：<a href="https://github.com/chenBingX">Newton</a>(<a href="coorchice.cb@alibaba-inc.com">coorchice.cb@alibaba-inc.com</a>)</strong></p>
 
 <p>
 
 <a href="https://pub.dev/packages/fbutton#-readme-tab-">
-    <img height="20" src="https://img.shields.io/badge/Version-1.0.3-important.svg">
+    <img height="20" src="https://img.shields.io/badge/Version-2.0.0-important.svg">
 </a>
 
 
-<a href="https://github.com/Fliggy-Android-Team/fbutton">
+<a href="https://github.com/Fliggy-Mobile/fbutton">
     <img height="20" src="https://img.shields.io/badge/Build-passing-brightgreen.svg">
 </a>
 
 
-<a href="https://github.com/Fliggy-Android-Team">
+<a href="https://github.com/Fliggy-Mobile">
     <img height="20" src="https://img.shields.io/badge/Team-FAT-ffc900.svg">
 </a>
 
@@ -46,11 +46,11 @@
 <p>
 <p>
 
-<img height="500" src="https://raw.githubusercontent.com/chenBingX/img/master/Flutter/fbutton/fbutton_all.png">
+<img height="500" src="https://gw.alicdn.com/tfs/TB1okQSNfb2gK0jSZK9XXaEgFXa-1280-703.png">
 
 </div>
 
-**[English](https://github.com/Fliggy-Android-Team/fbutton) | 简体中文**
+**English | [简体中文](https://github.com/Fliggy-Mobile/fbutton/blob/master/README_CN.md)**
 
 > Like it? Please cast your **Star**  🥰 ！
 
@@ -70,6 +70,8 @@
 
 - More sense of space **Shadow**
 
+-High-quality  **Neumorphism**  style
+
 # 🛠 Guide
 
 ## ⚙️ Parameters
@@ -80,33 +82,33 @@
 |Param|Type|Necessary|Default|desc|
 |---|---|:---:|---|---|
 |onPressed|VoidCallback|true|null|Click callback. If null, FButton will enter an unavailable state|
+|onPressedDown|VoidCallback|false|null|Callback when pressed|
+|onPressedUp|VoidCallback|false|null|Callback when lifted|
+|onPressedCancel|VoidCallback|false|null|Callback when cancel is pressed|
 |height|double|false|null|height|
 |width|double|false|null|width|
+|style|TextStyle|false|null|text style|
+|disableStyle|TextStyle|false|null|Unavailable text style|
+|alignment|Alignment|false|null|alignment|
 |text|String|false|null|button text|
-|textColor|Color|false|Colors.black12|Button text color|
-|fontSize|double|false|12|Button text size|
-|fontStyle|FontStyle|false|null|Button text font|
 |color|Color|false|null|Button color|
 |disabledColor|Color|false|null|Color when FButton is unavailable|
-|focusNode|FocusNode|false|null|focus|
-|autofocus|bool|false|false|Whether it can automatically obtain focus|
-|padding|EdgeInsetsGeometry|false|EdgeInsets.symmetric(horizontal: 16.0, vertical: 16)|FButton internal spacing|
-|corner|Corner|false|null|Configure corners of FButton|
-|cornerStyle|CornerStyle|false|CornerStyle.round|Configure the corner style of FButton. round-rounded corners, bevel-beveled|
+|padding|EdgeInsetsGeometry|false|null|FButton internal spacing|
+|corner|FCorner|false|null|Configure corners of Widget|
+|cornerStyle|FCornerStyle|false|FCornerStyle.round|Configure the corner style of Widget. round-rounded corners, bevel-beveled|
 |strokeColor|Color|false|Colors.black|Border color|
 |strokeWidth|double|false|0|Border width. The border will appear when `strokeWidth > 0`|
 |gradient|Gradient|false|null|Configure gradient colors. Will override the `color`|
-|fontHeight|double|false|null|height of one line of text = textSize * fontHeight|
-|textWeight|double|false|FontWeight.normal|Text weight|
+|activeMaskColor|Color|否|Colors.transparent|The color of the mask when pressed|
+|surfaceStyle|FSurface|false|FSurface.Flat|Surface style. Default [FSurface.Flat]. See [FSurface] for details|
 
 ### 💫 Effect parameters
 |Param|Type|Necessary|Default|desc|
 |---|---|:---:|---|---|
-|effect|bool|false|false|Whether to enable touch effects|
 |clickEffect|bool|false|false|Whether to enable click effects|
 |hoverColor|Color|false|null|FButton color when hovering|
+|onHover|ValueChanged<bool>|false|null|Callback when the mouse enters/exits the component range|
 |highlightColor|Color|false|null|The color of the FButton when touched. `effect:true` required|
-|splashColor|Color|false|null|The color of the position of the contact when touched. `effect:true` required|
 
 
 ###  🔳 Shadow parameters
@@ -123,6 +125,7 @@
 |imageMargin|double|false|6.0|Spacing between icon and text|
 |imageAlignment|ImageAlignment|false|ImageAlignment.left|Relative position of icon and text|
 |loading|bool|false|false|Whether to enter the Loading state|
+|loadingWidget|Widget|false|null|Loading widget in loading state. Will override the default Loading effect|
 |clickLoading|bool|false|false|Whether to enter Loading state after clicking FButton|
 |loadingColor|Color|false|null|Loading colors|
 |loadingStrokeWidth|double|false|4.0|Loading width|
@@ -134,33 +137,40 @@
 
 ### 🔩 Basic Demo
 
-![](https://raw.githubusercontent.com/chenBingX/img/master/Flutter/fbutton/fbutton_normal.jpg)
+![](https://gw.alicdn.com/tfs/TB1fUw0NoY1gK0jSZFCXXcwqXXa-720-298.png)
 
 ```dart
-
-// #Normal
+// FButton #1
 FButton(
-  width: 100,
-  text: "#Normal",
-  textColor: Colors.white,
-  fontSize: 9,
-  color: Color(0xffFFc900),
-  onPressed: () {
-    toast(context, "FWidget 👍");
-  },
+  height: 40,
+  alignment: Alignment.center,
+  text: "FButton #1",
+  style: TextStyle(color: Colors.white),
+  color: Color(0xffffab91),
+  onPressed: () {},
 )
 
-// #Disable
+// FButton #2
 FButton(
-  width: 100,
-  text: "#Disable",
-  textColor: Colors.white,
-  fontSize: 9,
-  color: Color(0xffFFc900),
-  disabledTextColor: Colors.b
-  disabledColor: Colors.grey[
+  padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+  text: "FButton #2",
+  style: TextStyle(color: Colors.white),
+  color: Color(0xffffab91),
+  corner: FCorner.all(6.0),
 )
 
+// FButton #3
+FButton(
+  padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+  text: "FButton #3",
+  style: TextStyle(color: Colors.white),
+  disableStyle: TextStyle(color: Colors.black38),
+  color: Color(0xffF8AD36),
+
+  /// set disable Color
+  disabledColor: Colors.grey[300],
+  corner: FCorner.all(6.0),
+)
 ```
 By simply configuring `text` and` onPressed`, you can construct an available **FButton**.
 
@@ -170,32 +180,35 @@ You can also freely configure the style of **FButton** when it is not available 
 
 ### 🎈 Corner & Stroke 
 
-![](https://raw.githubusercontent.com/chenBingX/img/master/Flutter/fbutton/fbutton_corner_effect.gif)
+![](https://gw.alicdn.com/tfs/TB1qFejbggP7K4jSZFqXXamhVXa-698-598.gif)
+
 
 
 ```dart
 // #1
 FButton(
   width: 130,
-  effect: true,
   text: "FButton #1",
-  textColor: Colors.white,
+  style: TextStyle(color: Colors.white),
   color: Color(0xffFF7043),
   onPressed: () {},
   clickEffect: true,
-  corner: FButtonCorner.all(25),
+  
+  /// 配置边角大小
+  ///
+  /// set corner size
+  corner: FCorner.all(25),
 ),
 
 // #2
 FButton(
   width: 130,
-  effect: true,
   text: "FButton #2",
-  textColor: Colors.white,
+  style: TextStyle(color: Colors.white),
   color: Color(0xffFFA726),
   onPressed: () {},
   clickEffect: true,
-  corner: FButtonCorner(
+  corner: FCorner(
     leftBottomCorner: 40,
     leftTopCorner: 6,
     rightTopCorner: 40,
@@ -206,14 +219,17 @@ FButton(
 // #3
 FButton(
   width: 130,
-  effect: true,
   text: "FButton #3",
-  textColor: Colors.white,
+  style: TextStyle(color: Colors.white),
   color: Color(0xffFFc900),
   onPressed: () {},
   clickEffect: true,
-  corner: FButtonCorner(leftTopCorner: 10),
-  cornerStyle: FButtonCornerStyle.bevel,
+  corner: FCorner(leftTopCorner: 10),
+  
+  /// 设置边角风格
+  ///
+  /// set corner style
+  cornerStyle: FCornerStyle.bevel,
   strokeWidth: 0.5,
   strokeColor: Color(0xffF9A825),
 ),
@@ -221,49 +237,51 @@ FButton(
 // #4
 FButton(
   width: 130,
-  effect: true,
   padding: EdgeInsets.fromLTRB(6, 16, 30, 16),
   text: "FButton #4",
-  textColor: Colors.white,
+  style: TextStyle(color: Colors.white),
   color: Color(0xff00B0FF),
   onPressed: () {},
   clickEffect: true,
-  corner: FButtonCorner(
+  corner: FCorner(
       rightTopCorner: 25,
       rightBottomCorner: 25),
-  cornerStyle: FButtonCornerStyle.bevel,
+  cornerStyle: FCornerStyle.bevel,
   strokeWidth: 0.5,
   strokeColor: Color(0xff000000),
 ),
-
 ```
 
 You can add rounded corners to **FButton** via the `corner` property. You can even control each fillet individually。
 
-By default, the corners of **FButton** are rounded. By setting `cornerStyle: FButtonCornerStyle.bevel`, you can get a bevel effect.
+By default, the corners of **FButton** are rounded. By setting `cornerStyle: FCornerStyle.bevel`, you can get a bevel effect.
 
 **FButton** supports control borders, provided that `strokeWidth> 0` can get the effect 🥳.
 
 ### 🌈 Gradient
 
-![](https://raw.githubusercontent.com/chenBingX/img/master/Flutter/fbutton/fbutton_gradient.jpg)
+
+![](https://gw.alicdn.com/tfs/TB1YgA.NoT1gK0jSZFrXXcNCXXa-486-518.png)
 
 ```dart
 
-// #1
 FButton(
   width: 100,
   height: 60,
   text: "#1",
-  textColor: Colors.white,
+  style: TextStyle(color: Colors.white),
   color: Color(0xffFFc900),
+  
+  /// 配置渐变色
+  ///
+  /// set gradient
   gradient: LinearGradient(colors: [
     Color(0xff00B0FF),
     Color(0xffFFc900),
   ]),
   onPressed: () {},
   clickEffect: true,
-  corner: FButtonCorner.all(8),
+  corner: FCorner.all(8),
 )
 ```
 
@@ -271,36 +289,39 @@ Through the `gradient` attribute, you can build **FButton** with gradient colors
 
 ### 🍭 Icon
 
-![](https://raw.githubusercontent.com/chenBingX/img/master/Flutter/fbutton/fbutton_image.jpg)
+![](https://gw.alicdn.com/tfs/TB1YBUVNoz1gK0jSZLeXXb9kVXa-528-302.png)
 
 ```dart
-
-// #1
 FButton(
   width: 88,
   height: 38,
   padding: EdgeInsets.all(0),
   text: "Back",
-  textColor: Colors.white,
+  style: TextStyle(color: Colors.white),
   color: Color(0xffffc900),
   onPressed: () {
     toast(context, "Back!");
   },
   clickEffect: true,
-  corner:
-  FButtonCorner(
+  corner: FCorner(
     leftTopCorner: 25,
     leftBottomCorner: 25,),
+  
+  /// 配置图标
+  /// 
+  /// set icon
   image: Icon(
     Icons.arrow_back_ios,
     color: Colors.white,
     size: 12,
   ),
+
+  /// 配置图标与文字的间距
+  ///
+  /// Configure the spacing between icon and text
   imageMargin: 8,
 ),
 
-
-// #3
 FButton(
   onPressed: () {},
   image: Icon(
@@ -308,12 +329,15 @@ FButton(
     color: Colors.grey,
   ),
   imageMargin: 8,
+
+  /// 配置图标与文字相对位置
+  ///
+  /// Configure the relative position of icons and text
   imageAlignment: ImageAlignment.top,
   text: "Print",
-  textColor: Colors.grey,
+  style: TextStyle(color: textColor),
   color: Colors.transparent,
 ),
-
 ```
 
 The `image` property can set an image for **FButton** and you can adjust the position of the image relative to the text, through` imageAlignment`.
@@ -323,30 +347,30 @@ If the button does not need a background, just set `color: Colors.transparent`.
 
 ### 🔥 Effect
 
-![](https://raw.githubusercontent.com/chenBingX/img/master/Flutter/fbutton/fbutton_effect.gif)
+![](https://gw.alicdn.com/tfs/TB1IKhaNBr0gK0jSZFnXXbRRXXa-698-178.gif)
 
 ```dart
 
 FButton(
   width: 200,
-  effect: true,
   text: "Try Me!",
-  textColor: Colors.white,
+  style: TextStyle(color: textColor),
   color: Color(0xffffc900),
   onPressed: () {},
   clickEffect: true,
-  corner: FButtonCorner.all(9),
-  splashColor: Color(0xffff7043),
+  corner: FCorner.all(9),
+  
+  /// 配置按下时颜色
+  ///
+  /// set pressed color
   highlightColor: Color(0xffE65100).withOpacity(0.20),
+  
+  /// 配置 hover 状态时颜色
+  ///
+  /// set hover color
   hoverColor: Colors.redAccent.withOpacity(0.16),
 ),
 ```
-
-By default, FButton will turn off the click effect. You can enable it by setting `effect: true`.
-
-> It is best not to set the `effect` and` clickEffect` attributes to **true**.
-
-At the same time, the splash color of the contact position can be configured through the `splashColor` attribute.
 
 The highlight color of **FButton** can be configured through the `highlightColor` property。
 
@@ -354,26 +378,48 @@ The highlight color of **FButton** can be configured through the `highlightColor
 
 ### 🔆 Loading
 
-![](https://raw.githubusercontent.com/chenBingX/img/master/Flutter/fbutton/flutter_loading.gif)
+![](https://gw.alicdn.com/tfs/TB1dbvTXODsXe8jSZR0XXXK6FXa-698-698.gif)
 
 ```dart
-// #1
 FButton(
-  effect: true,
   text: "Click top loading",
-  textColor: Colors.white,
+  style: TextStyle(color: textColor),
   color: Color(0xffffc900),
-  onPressed: () {
-    print("Loading...");
-  },
-  clickEffect: true,
-  corner: FButtonCorner.all(9),
+  ...
+
+  /// 配置 loading 大小
+  /// 
+  /// set loading size
   loadingSize: 15,
+
+  /// 配置 loading 与文本的间距
+  ///
+  // Configure the spacing between loading and text
   imageMargin: 6,
+  
+  /// 配置 loading 的宽
+  ///
+  /// set loading width
   loadingStrokeWidth: 2,
+
+  /// 是否支持点击自动开始 loading
+  /// 
+  /// Whether to support automatic loading by clicking
   clickLoading: true,
+
+  /// 配置 loading 的颜色
+  ///
+  /// set loading color
   loadingColor: Colors.white,
+
+  /// 配置 loading 状态时的文本
+  /// 
+  /// set loading text
   loadingText: "Loading...",
+
+  /// 配置 loading 与文本的相对位置
+  ///
+  /// Configure the relative position of loading and text
   imageAlignment: ImageAlignment.top,
 ),
 
@@ -381,27 +427,41 @@ FButton(
 FButton(
   width: 170,
   height: 70,
-  effect: true,
   text: "Click to loading",
-  textColor: Colors.white,
+  style: TextStyle(color: textColor),
   color: Color(0xffffc900),
-  onPressed: () {
-    print("Loading...");
-  },
-  clickEffect: true,
-  corner: FButtonCorner.all(9),
-  image: Icon(
-    Icons.cloud_download,
-    size: 18,
-    color: Colors.white,
-  ),
+  onPressed: () { },
+  ...
   imageMargin: 8,
   loadingSize: 15,
   loadingStrokeWidth: 2,
   clickLoading: true,
   loadingColor: Colors.white,
   loadingText: "Loading...",
+
+  /// loading 时隐藏文本
+  ///
+  /// Hide text when loading
   hideTextOnLoading: true,
+)
+
+
+FButton(
+  width: 170,
+  height: 70,
+  alignment: Alignment.center,
+  text: "Click to loading",
+  style: TextStyle(color: Colors.white),
+  color: Color(0xff90caf9),
+  ...
+  imageMargin: 8,
+  clickLoading: true,
+  hideTextOnLoading: true,
+
+  /// 配置自定义 loading 样式
+  ///
+  /// Configure custom loading style
+  loadingWidget: CupertinoActivityIndicator(),
 ),
 ```
 
@@ -417,28 +477,87 @@ The position of `loading` will be affected by the` imageAlignment` attribute.
 
 When `hideTextOnLoading: true`, if **FButton** is in` loading` state, its text will be hidden.
 
+Through `loadingWidget`, developers can set completely customized loading styles.
+
 ## Shadow
 
-![](https://raw.githubusercontent.com/chenBingX/img/master/Flutter/fbutton/flutter_shadow.gif)
+![](https://gw.alicdn.com/tfs/TB11OxcNBr0gK0jSZFnXXbRRXXa-698-368.gif)
 
 ```dart
 
 FButton(
   width: 200,
-  effect: true,
   text: "Shadow",
   textColor: Colors.white,
   color: Color(0xffffc900),
   onPressed: () {},
   clickEffect: true,
-  corner: FButtonCorner.all(28),
+  corner: FCorner.all(28),
+  
+  /// 配置阴影颜色
+  ///
+  /// set shadow color
   shadowColor: Colors.black87,
+
+  /// 设置组件高斯与阴影形状卷积的标准偏差。
+  /// 
+  /// Sets the standard deviation of the component's Gaussian convolution with the shadow shape.
   shadowBlur: _shadowBlur,
 ),
 ```
 
 **FButton** allows you to configure the color, size, and position of the shadow.
 
+
+### 🍭 Neumorphism Style
+
+![](https://gw.alicdn.com/tfs/TB18CN4dTM11u4jSZPxXXahcXXa-832-644.gif)
+
+```dart
+FButton(
+
+  /// 开启 Neumorphism 支持
+  ///
+  /// Turn on Neumorphism support
+  isSupportNeumorphism: true,
+
+  /// 配置光源方向
+  ///
+  /// Configure light source direction
+  lightOrientation: lightOrientation,
+
+  /// 配置亮部阴影
+  ///
+  /// Configure highlight shadow
+  highlightShadowColor: Colors.white,
+
+  /// 配置暗部阴影
+  ///
+  /// Configure dark shadows
+  shadowColor: mainShadowColor,
+  strokeColor: mainBackgroundColor,
+  strokeWidth: 3.0,
+  width: 190,
+  height: 60,
+  text: "FWidget",
+  style: TextStyle(
+      color: mainTextTitleColor, fontSize: neumorphismSize_2_2),
+  alignment: Alignment.center,
+  color: mainBackgroundColor,
+  ...
+)
+```
+**FButton** brings an incredible, ultra-high texture **Neumorphism** style to developers.
+
+Developers only need to configure the `isSupportNeumorphism` parameter to enable and disable the **Neumorphism** style.
+
+If you want to adjust the style of **Neumorphism**, you can make subtle adjustments through several attributes related to Shadow, among which:
+
+- shadowColor: configure the shadow of the shadow
+
+- highlightShadowColor: configure highlight shadow
+
+**FButton** also provides `lightOrientation` parameters, and even allows developers to adjust the care angle, and has obtained different **Neumorphism** effects.
 
 # 😃 How to use？
 
@@ -459,12 +578,12 @@ dependencies:
 dependencies:
   fbutton:
     git:
-      url: 'git@github.com:Fliggy-Android-Team/fbutton.git'
+      url: 'git@github.com:Fliggy-Mobile/fbutton.git'
       ref: '<Branch number or tag number>'
 ```
 
 
-> ⚠️ Attention，please refer to [**FButton**] (https://github.com/Fliggy-Android-Team/fbutton) official project for branch number or tag.
+> ⚠️ Attention，please refer to [**FButton**] (https://github.com/Fliggy-Mobile/fbutton) official project for branch number or tag.
 
 
 # 💡 License
@@ -487,5 +606,19 @@ limitations under the License.
 ```
 
 
-### Like it? Please cast your [**Star**](https://github.com/Fliggy-Android-Team/fbutton)  🥰 ！
+### Like it? Please cast your [**Star**](https://github.com/Fliggy-Mobile/fbutton)  🥰 ！
 
+
+---
+
+# How to run Demo project?
+
+1. **clone** project to local
+
+2. Enter the project `example` directory and run the following command
+
+```
+flutter create .
+```
+
+3. Run the demo in `example`

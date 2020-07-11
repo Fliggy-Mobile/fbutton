@@ -32,8 +32,9 @@
 
 - Add Neumorphism style support.
     - Neumorphism style support can be turned on/off through the `isSupportNeumorphism` parameter
-    - The `highlightShadowColor` parameter can configure the bright shadow color after enabling the Neumorphism style  
-
+    - The `highlightShadowColor` parameter can configure the bright shadow color after enabling the Neumorphism style
+    - The `lightOrientation` parameter can adjust the direction of the light source
+    
 - Add `surfaceStyle` parameter to support the definition of surface style.
     - Flat
     - Convex

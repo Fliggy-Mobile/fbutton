@@ -70,7 +70,7 @@
 
 - More sense of space **Shadow**
 
--High-quality  **Neumorphism**  style
+- High-quality  **Neumorphism**  style
 
 # 🛠 Guide
 
@@ -132,6 +132,14 @@
 |hideTextOnLoading|bool|false|false|Whether to hide text in the loading state|
 |loadingText|String|false|null|Loading text|
 |loadingSize|double|false|12|Loading size|
+
+### 🍭 Neumorphism Style
+
+|Param|Type|Necessary|Default|desc|
+|---|---|:---:|---|---|
+|isSupportNeumorphism|bool|false|false|Whether to support the Neumorphism style. Open this item [highlightColor] will be invalid|
+|lightOrientation|FLightOrientation|false|FLightOrientation.LeftTop|Valid when [isSupportNeumorphism] is true. The direction of the light source is divided into four directions: upper left, lower left, upper right, and lower right. Used to control the illumination direction of the light source, which will affect the highlight direction and shadow direction|
+|highlightShadowColor|Color|false|null|After the Neumorphism style is turned on, the bright shadow color|
 
 ## 📺 Demo
 

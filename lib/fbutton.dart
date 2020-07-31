@@ -1,3 +1,4 @@
+export 'package:fcontrol/fdefine.dart';
 import 'package:fcontrol/fcontrol.dart';
 import 'package:fcontrol/fdefine.dart';
 import 'package:flutter/material.dart';

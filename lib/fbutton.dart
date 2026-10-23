@@ -362,7 +362,7 @@ class _FButton extends State<FButton> with SingleTickerProviderStateMixin {
                 strokeWidth: widget.loadingStrokeWidth,
                 valueColor: AlwaysStoppedAnimation<Color>(widget.loadingColor ==
                         null
-                    ? Theme.of(context).accentColor.withOpacity(disableOpacity)
+                    ? Theme.of(context).colorScheme.secondary.withOpacity(disableOpacity)
                     : widget.loadingColor!.withOpacity(disableOpacity)),
               ),
             )

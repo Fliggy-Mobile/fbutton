@@ -4,17 +4,13 @@ version: 3.0.0
 homepage: https://github.com/Fliggy-Mobile/fbutton
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  # TODO: 切回 pub 依赖 `fcontrol: ^2.0.0`（fcontrol 2.0.0 发布到 pub.dev 后）
-  fcontrol:
-    git:
-      url: "https://github.com/Fliggy-Mobile/fcontrol.git"
-      ref: "stable"
+  fcontrol: ^2.0.0
 
 dev_dependencies:
   flutter_test:

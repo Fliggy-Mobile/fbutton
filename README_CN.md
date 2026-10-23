@@ -86,6 +86,7 @@
 |onPressedDown|VoidCallback|false|null|按下时会回调|
 |onPressedUp|VoidCallback|false|null|抬起时会回调|
 |onPressedCancel|VoidCallback|false|null|按下取消时会回调|
+|onLongPress|VoidCallback|false|null|长按按钮时会回调|
 |height|double|否|null|高度|
 |width|double|否|null|宽度|
 |style|TextStyle|false|null|文本样式|

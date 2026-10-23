@@ -85,6 +85,7 @@
 |onPressedDown|VoidCallback|false|null|Callback when pressed|
 |onPressedUp|VoidCallback|false|null|Callback when lifted|
 |onPressedCancel|VoidCallback|false|null|Callback when cancel is pressed|
+|onLongPress|VoidCallback|false|null|Callback when the button is long-pressed|
 |height|double|false|null|height|
 |width|double|false|null|width|
 |style|TextStyle|false|null|text style|

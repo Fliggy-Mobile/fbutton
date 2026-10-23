@@ -1,3 +1,10 @@
+## 3.0.0
+
+- Support null safety
+- Fix: `highlightColor` now defaults to the button's `color` when not set, no more unexpected highlight fill (#10, #20)
+- Fix: `disabledColor` now takes effect when `gradient` is set (#13)
+- New: `onLongPress` callback support (#12)
+
 ## 2.0.1
 
 - optimization
